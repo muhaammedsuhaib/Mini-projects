@@ -1,8 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     const data = [
-        ["Sidebar", "HTML, Tailwindcss", './Sidebar/index.html'],
+        ["HTML Tags Reference", "HTML, CSS, JS", './HTML/index.html'],
         ["Project 2", "HTML, CSS, React", './project2/index.html'],
-        ["Project 3", "HTML, CSS, Node.js", './project3/index.html']
+        ["Project 3", "HTML, CSS, Node.js", './project3/index.html'],
+        ["Project 3", "HTML, CSS, Node.js", './project3/index.html'],
     ];
 
     const tableBody = document.querySelector('#data-table tbody');
@@ -22,11 +23,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 cell.setAttribute('data-label', 'Link');
             } else {
                 cell.textContent = cellData;
-                cell.setAttribute('data-label', ['Projects Name', 'What is Using'][index]);
+                cell.setAttribute('data-label', ['Project Name', 'Technologies Used'][index]);
             }
             row.appendChild(cell);
         });
 
+        row.classList.add('table-row');  // Add class for animation
         tableBody.appendChild(row);
     });
 });

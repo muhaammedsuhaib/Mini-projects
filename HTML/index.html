@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="HTML.png" type="image/x-icon">
+    <title>HTML Tags Reference</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>HTML Tags Reference</h1>
+        <nav>
+            <ul>
+                <li><a href="#structural">Structural Elements</a></li>
+                <li><a href="#text">Text Formatting</a></li>
+                <li><a href="#lists">Lists</a></li>
+                <li><a href="#links">Links</a></li>
+                <li><a href="#images">Images</a></li>
+                <li><a href="#tables">Tables</a></li>
+                <li><a href="#forms">Forms</a></li>
+                <li><a href="#media">Media Elements</a></li>
+                <li><a href="#semantic">Semantic Elements</a></li>
+                <li><a href="#meta">Meta Tags</a></li>
+            </ul>
+        </nav>
+        <button id="toggle-dark-mode">Change Mode</button>
+    </header>
+
+    <main>
+        <section id="structural">
+            <h2>Structural Elements</h2>
+            <pre>
+                &lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                    &lt;head&gt;
+                        &lt;title&gt;Page Title&lt;/title&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;h1&gt;This is a Heading&lt;/h1&gt;
+                        &lt;p&gt;This is a paragraph.&lt;/p&gt;
+                    &lt;/body&gt;
+                &lt;/html&gt;
+            </pre>
+        </section>
+
+        <section id="text">
+            <h2>Text Formatting Tags</h2>
+            <h3>Headings</h3>
+            <p>&lt;h1&gt; to &lt;h6&gt;: Headings</p>
+            <h1>This is a Heading 1</h1>
+            <h2>This is a Heading 2</h2>
+            <h3>This is a Heading 3</h3>
+            <h4>This is a Heading 4</h4>
+            <h5>This is a Heading 5</h5>
+            <h6>This is a Heading 6</h6>
+
+            <h3>Text Formatting</h3>
+            <p>&lt;p&gt;: Paragraph</p>
+            <p>This is a paragraph.</p>
+            <p>&lt;strong&gt;: Strong text</p>
+            <p><strong>This text is strong.</strong></p>
+            <p>&lt;em&gt;: Emphasized text</p>
+            <p><em>This text is emphasized.</em></p>
+            <p>&lt;small&gt;: Smaller text</p>
+            <p><small>This text is smaller.</small></p>
+            <p>&lt;mark&gt;: Highlighted text</p>
+            <p><mark>This text is highlighted.</mark></p>
+            <p>&lt;del&gt;: Deleted text</p>
+            <p><del>This text is deleted.</del></p>
+            <p>&lt;ins&gt;: Inserted text</p>
+            <p><ins>This text is inserted.</ins></p>
+            <p>&lt;blockquote&gt;: Blockquote</p>
+            <blockquote>This is a blockquote.</blockquote>
+            <p>&lt;cite&gt;: Citation</p>
+            <p>Cited work: <cite>Author Name</cite></p>
+            <p>&lt;abbr&gt;: Abbreviation</p>
+            <p>This is an <abbr title="Hypertext Markup Language">HTML</abbr> example.</p>
+        </section>
+
+        <section id="lists">
+            <h2>Lists</h2>
+            <h3>Unordered List</h3>
+            <ul>
+                <li>&lt;ul&gt;: Unordered list</li>
+                <li>&lt;li&gt;: List item</li>
+            </ul>
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ul>
+
+            <h3>Ordered List</h3>
+            <ol>
+                <li>&lt;ol&gt;: Ordered list</li>
+                <li>&lt;li&gt;: List item</li>
+            </ol>
+            <ol>
+                <li>First Item</li>
+                <li>Second Item</li>
+                <li>Third Item</li>
+            </ol>
+        </section>
+
+        <section id="links">
+            <h2>Links</h2>
+            <p>&lt;a href="URL"&gt;: Hyperlink</p>
+            <p>Example: <a href="https://www.example.com">Visit Example</a></p>
+        </section>
+
+        <section id="images">
+            <h2>Images</h2>
+            <p>&lt;img src="URL" alt="description"&gt;: Image</p>
+            <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+        </section>
+
+        <section id="tables">
+            <h2>Tables</h2>
+            <table>
+                <tr>
+                    <th>Header 1</th>
+                    <th>Header 2</th>
+                </tr>
+                <tr>
+                    <td>Data 1</td>
+                    <td>Data 2</td>
+                </tr>
+            </table>
+        </section>
+
+        <section id="forms">
+            <h2>Forms</h2>
+            <form action="#" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br>
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" rows="4" required></textarea><br>
+                <input type="submit" value="Submit">
+            </form>
+        </section>
+
+        <section id="media">
+            <h2>Media Elements</h2>
+            <h3>Video</h3>
+            <video width="320" height="240" controls>
+                <source src="movie.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <h3>Audio</h3>
+            <audio controls>
+                <source src="audio.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </section>
+
+        <section id="semantic">
+            <h2>Semantic Elements</h2>
+            <p>&lt;header&gt;, &lt;nav&gt;, &lt;section&gt;, &lt;article&gt;, &lt;footer&gt;: Semantic elements</p>
+            <header>
+                <h3>Example Header</h3>
+            </header>
+            <nav>
+                <ul>
+                    <li><a href="#">Link 1</a></li>
+                    <li><a href="#">Link 2</a></li>
+                </ul>
+            </nav>
+            <section>
+                <h3>Example Section</h3>
+                <p>This is a section example.</p>
+            </section>
+            <footer>
+                <p>Footer content goes here.</p>
+            </footer>
+        </section>
+
+        <section id="meta">
+            <h2>Meta Tags</h2>
+            <pre>
+                &lt;meta charset="UTF-8"&gt;: Character encoding<br>
+                &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;: Responsive design<br>
+                &lt;meta name="description" content="Description of the page"&gt;: SEO description<br>
+                &lt;meta name="keywords" content="HTML, CSS, JavaScript"&gt;: Keywords for SEO
+            </pre>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 HTML Tags Reference</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

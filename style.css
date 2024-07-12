@@ -1,23 +1,39 @@
 /* Reset and Basic Styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
     margin: 0;
     padding: 0;
+    color: #333;
 }
 
 .main {
     width: 80%;
     margin: 50px auto;
-    background: #fff;
+    background: #ffffff;
     padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    animation: fadeIn 1s ease-in-out;
 }
 
 h1 {
     text-align: center;
-    color: #333;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 /* Table Styles */
@@ -25,7 +41,6 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
-    overflow-x: auto; /* Enable horizontal scrolling on small screens */
 }
 
 th, td {
@@ -35,14 +50,29 @@ th, td {
 }
 
 th {
-    background-color: #f2f2f2;
-    color: #333;
+    background-color: #3498db;
+    color: white;
     font-weight: bold;
     min-width: 120px;
 }
 
 tbody tr:nth-child(even) {
     background-color: #f9f9f9;
+}
+
+tbody tr {
+    animation: slideIn 0.5s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
 }
 
 /* Responsive Design */
@@ -81,10 +111,10 @@ tbody tr:nth-child(even) {
         text-align: left;
     }
     td:nth-of-type(1):before {
-        content: "Projects Name: ";
+        content: "Project Name: ";
     }
     td:nth-of-type(2):before {
-        content: "What is Using: ";
+        content: "Technologies Used: ";
     }
     td:nth-of-type(3):before {
         content: "Link: ";
