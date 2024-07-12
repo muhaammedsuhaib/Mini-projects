@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     const toggleDarkModeButton = document.getElementById('toggle-dark-mode');
     const body = document.body;
+    const hamburger = document.getElementById('hamburger');
+    const navList = document.getElementById('nav-list');
 
     // Check if dark mode preference is stored in localStorage
     if (localStorage.getItem('dark-mode') === 'enabled') {
@@ -9,12 +11,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     toggleDarkModeButton.addEventListener('click', function() {
         body.classList.toggle('dark-mode');
+        localStorage.setItem('dark-mode', body.classList.contains('dark-mode') ? 'enabled' : 'disabled');
+    });
 
-        // Save dark mode preference to localStorage
-        if (body.classList.contains('dark-mode')) {
-            localStorage.setItem('dark-mode', 'enabled');
-        } else {
-            localStorage.setItem('dark-mode', 'disabled');
-        }
+    hamburger.addEventListener('click', function() {
+        navList.classList.toggle('active');
     });
 });
