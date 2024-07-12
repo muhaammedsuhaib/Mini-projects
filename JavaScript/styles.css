@@ -16,6 +16,10 @@ header {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
+nav {
+    margin: 10px 0;
+}
+
 nav ul {
     list-style: none;
     padding: 0;
@@ -33,8 +37,12 @@ nav a {
     text-decoration: none;
 }
 
-h1, h2, h3 {
-    color: #007BFF;
+/* Hamburger Menu Styles */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: white;
 }
 
 /* Section Styles */
@@ -50,15 +58,21 @@ section {
 /* Responsive Styles */
 @media (max-width: 768px) {
     nav ul {
+        display: none;
         flex-direction: column;
+        width: 100%;
     }
 
-    section {
+    nav ul.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    nav ul li {
         margin: 10px 0;
-    }
-
-    h1, h2, h3 {
-        font-size: 1.5em;
     }
 }
 
