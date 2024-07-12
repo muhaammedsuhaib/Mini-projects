@@ -1,9 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const data = [
         ["HTML Tags Reference", "HTML, CSS, JS", './HTML/index.html'],
-        ["Project 2", "HTML, CSS, React", './project2/index.html'],
-        ["Project 3", "HTML, CSS, Node.js", './project3/index.html'],
-        ["Project 3", "HTML, CSS, Node.js", './project3/index.html'],
+        ["CSS Reference Guide", "HTML, CSS, JS", './CSS/index.html'],
+        ["JavaScript Reference Guide", "HTML, CSS, JS", './JavaScript/index.html'],
     ];
 
     const tableBody = document.querySelector('#data-table tbody');
