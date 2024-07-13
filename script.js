@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ["HTML Tags Reference", "HTML, CSS, JS", './HTML/index.html'],
         ["CSS Reference Guide", "HTML, CSS, JS", './CSS/index.html'],
         ["JavaScript Reference Guide", "HTML, CSS, JS", './JavaScript/index.html'],
+        ["Scrolling Text animation", "HTML, CSS, JS , GSAP", './ScrollingTextanimation/index.html'],
     ];
 
     const tableBody = document.querySelector('#data-table tbody');
