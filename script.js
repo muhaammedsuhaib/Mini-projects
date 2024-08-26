@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ["CSS Reference Guide", "HTML, CSS, JS", './CSS/index.html'],
         ["JavaScript Reference Guide", "HTML, CSS, JS", './JavaScript/index.html'],
         ["Scrolling Text animation", "HTML, CSS, JS , GSAP", './ScrollingTextanimation/index.html'],
+        ["Create a Google Calendar Event", "HTML, CSS, JS ", './Create Google Calendar Event/index.html'],
     ];
 
     const tableBody = document.querySelector('#data-table tbody');

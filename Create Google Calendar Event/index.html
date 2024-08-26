@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Google Calendar Event</title>
+    <link rel="shortcut icon" href="https://cdn3d.iconscout.com/3d/premium/thumb/check-event-3d-icon-download-in-png-blend-fbx-gltf-file-formats--date-done-calendar-day-pack-user-interface-icons-6491365.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .error {
+            color: #ff0000;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+        <h2 class="text-2xl font-semibold mb-6 text-center">Create a Google Calendar Event</h2>
+        <form id="calendarForm" novalidate>
+            <div class="mb-4">
+                <label for="title" class="block text-gray-700">Event Title:</label>
+                <input type="text" id="title" name="title" class="w-full p-2 border border-gray-300 rounded mt-1">
+                <div id="titleError" class="error"></div>
+            </div>
+
+            <div class="mb-4">
+                <label for="startDate" class="block text-gray-700">Start Date and Time:</label>
+                <input type="datetime-local" id="startDate" name="startDate" class="w-full p-2 border border-gray-300 rounded mt-1" onchange="setEndTime()">
+                <div id="startDateError" class="error"></div>
+            </div>
+
+            <div class="mb-4">
+                <label for="endDate" class="block text-gray-700">End Date and Time:</label>
+                <input type="datetime-local" id="endDate" name="endDate" class="w-full p-2 border border-gray-300 rounded mt-1" readonly>
+                <div id="endDateError" class="error"></div>
+            </div>
+
+            <div class="mb-4">
+                <label for="description" class="block text-gray-700">Event Description:</label>
+                <textarea id="description" name="description" class="w-full p-2 border border-gray-300 rounded mt-1"></textarea>
+                <div id="descriptionError" class="error"></div>
+            </div>
+
+            <div class="mb-6">
+                <label for="location" class="block text-gray-700">Event Location (optional):</label>
+                <input type="text" id="location" name="location" class="w-full p-2 border border-gray-300 rounded mt-1">
+            </div>
+
+            <button type="button" onclick="validateForm()" class="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition">
+                Create Event
+            </button>
+        </form>
+    </div>
+
+    <script>
+        function setEndTime() {
+    const startDateInput = document.getElementById('startDate');
+    const endDateInput = document.getElementById('endDate');
+
+    const startDate = new Date(startDateInput.value);
+    if (startDate) {
+        // Add one hour to the start date
+        const endDate = new Date(startDate);
+        endDate.setHours(endDate.getHours() + 1);
+
+        console.log(endDate, 'End date and time');
+
+        // Format the date as a string for the input (YYYY-MM-DDTHH:MM)
+        const year = endDate.getFullYear();
+        const month = String(endDate.getMonth() + 1).padStart(2, '0');
+        const day = String(endDate.getDate()).padStart(2, '0');
+        const hours = String(endDate.getHours()).padStart(2, '0');
+        const minutes = String(endDate.getMinutes()).padStart(2, '0');
+
+        const formattedDate = `${year}-${month}-${day}T${hours}:${minutes}`;
+
+        // Set the end date value
+        endDateInput.value = formattedDate;
+    }
+}
+
+        function validateForm() {
+            const title = document.getElementById('title').value.trim();
+            const startDate = document.getElementById('startDate').value.trim();
+            const endDate = document.getElementById('endDate').value.trim();
+            const description = document.getElementById('description').value.trim();
+
+            let isValid = true;
+            
+            document.getElementById('titleError').textContent = '';
+            document.getElementById('startDateError').textContent = '';
+            document.getElementById('endDateError').textContent = '';
+            document.getElementById('descriptionError').textContent = '';
+
+            if (title === '') {
+                document.getElementById('titleError').textContent = 'Event title is required';
+                isValid = false;
+            }
+
+            if (startDate === '') {
+                document.getElementById('startDateError').textContent = 'Start date and time is required';
+                isValid = false;
+            }
+
+            if (endDate === '') {
+                document.getElementById('endDateError').textContent = 'End date and time is required';
+                isValid = false;
+            }
+
+            if (description === '') {
+                document.getElementById('descriptionError').textContent = 'Event description is required';
+                isValid = false;
+            }
+
+            if (isValid) {
+                createGoogleCalendarEvent();
+            }
+        }
+
+        function createGoogleCalendarEvent() {
+            const title = document.getElementById('title').value;
+            const startDate = new Date(document.getElementById('startDate').value);
+            const endDate = new Date(document.getElementById('endDate').value);
+            const description = document.getElementById('description').value;
+            const location = document.getElementById('location').value;
+
+            const baseUrl = "https://calendar.google.com/calendar/render?action=TEMPLATE";
+            const eventTitle = encodeURIComponent(title);
+            const eventStartDate = startDate.toISOString().replace(/-|:|\.\d+/g, "");
+            const eventEndDate = endDate.toISOString().replace(/-|:|\.\d+/g, "");
+            const eventDescription = encodeURIComponent(description);
+            const eventLocation = encodeURIComponent(location);
+
+            const eventURL = `${baseUrl}&text=${eventTitle}&dates=${eventStartDate}/${eventEndDate}&details=${eventDescription}&location=${eventLocation}&sf=true&output=xml`;
+
+            window.open(eventURL, '_blank');
+        }
+    </script>
+</body>
+
+</html>

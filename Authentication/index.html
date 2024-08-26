@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Authentication</title>
+</head>
+<body>
+  <h2>Register</h2>
+  <form id="registerForm" enctype="multipart/form-data">
+    <input type="text" id="registerName" placeholder="Name" required>
+    <input type="email" id="registerEmail" placeholder="Email" required>
+    <input type="password" id="registerPassword" placeholder="Password" required>
+    <input type="file" id="registerImage" accept="image/*">
+    <button type="submit">Register</button>
+    <p id="registerMessage"></p>
+  </form>
+
+  <h2>Login</h2>
+  <form id="loginForm">
+    <input type="email" id="loginEmail" placeholder="Email" required>
+    <input type="password" id="loginPassword" placeholder="Password" required>
+    <button type="submit">Login</button>
+    <p id="loginMessage"></p>
+  </form>
+
+  <h2>Profile</h2>
+  <div id="profile" style="display: none;">
+    <p>Name: <span id="profileName"></span></p>
+    <p>Email: <span id="profileEmail"></span></p>
+    <img id="profileImage" src="" alt="Profile Image" style="max-width: 200px;">
+  </div>
+
+  <script>
+    document.getElementById('registerForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const name = document.getElementById('registerName').value;
+      const email = document.getElementById('registerEmail').value;
+      const password = document.getElementById('registerPassword').value;
+      const image = document.getElementById('registerImage').files[0];
+
+      const formData = new FormData();
+      formData.append('name', name);
+      formData.append('email', email);
+      formData.append('password', password);
+      if (image) formData.append('image', image);
+
+      try {
+        const response = await fetch('http://localhost:5000/auth/register', {
+          method: 'POST',
+          body: formData,
+        });
+
+        if (response.ok) {
+          document.getElementById('registerMessage').textContent = 'Registration successful!';
+        } else {
+          document.getElementById('registerMessage').textContent = 'Registration failed.';
+        }
+      } catch (error) {
+        document.getElementById('registerMessage').textContent = 'Error registering.';
+      }
+    });
+
+    document.getElementById('loginForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('loginEmail').value;
+      const password = document.getElementById('loginPassword').value;
+
+      try {
+        const response = await fetch('http://localhost:5000/auth/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password }),
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          localStorage.setItem('token', data.token);
+          localStorage.setItem('userId', data.userId);
+          await loadProfile(data.userId);
+          document.getElementById('loginMessage').textContent = 'Login successful!';
+        } else {
+          document.getElementById('loginMessage').textContent = 'Login failed.';
+        }
+      } catch (error) {
+        document.getElementById('loginMessage').textContent = 'Error logging in.';
+      }
+    });
+
+    async function loadProfile(userId) {
+      try {
+        const response = await fetch(`http://localhost:5000/auth/profile?userId=${userId}`);
+        if (response.ok) {
+          const user = await response.json();
+          document.getElementById('profileName').textContent = user.name;
+          document.getElementById('profileEmail').textContent = user.email;
+          document.getElementById('profileImage').src = `http://localhost:5000/${user.imagePath}`;
+          document.getElementById('profile').style.display = 'block';
+        } else {
+          console.error('Failed to load profile');
+        }
+      } catch (error) {
+        console.error('Error loading profile:', error);
+      }
+    }
+  </script>
+</body>
+</html>

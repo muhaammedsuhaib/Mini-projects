@@ -1,0 +1,25 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.navbar{
+    background: #000;
+    color: beige;   
+}
+.brand{
+    color: red;
+   padding-top: 10px;
+}
+.brand::after{
+    color: rgb(34, 255, 0);
+   padding-top: 10px;
+}
+ul{
+    display: flex;
+    justify-content: end;
+    gap: 50px;
+}
