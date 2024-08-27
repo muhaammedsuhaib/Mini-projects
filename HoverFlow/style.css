@@ -1,0 +1,232 @@
+.ccontainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 15px;
+    height: 100%;
+    flex-direction: row;
+  }
+  
+  .item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 20%;
+    border-radius: 20px;
+    overflow: hidden;
+    color: #030043;
+    text-align: left;
+    position: relative;
+    background: linear-gradient(180deg, #F0EEF3 0%, #B3C8FF 100%);
+    font-family: Everett, sans-serif;
+  }
+  
+  .item.hovered {
+    width: 54%;
+    background-color: #e0e0e0;
+    /*animation: horizontalBounce 0.5s;*/
+  }
+  
+  #item1.initial {
+    width: 54%;
+    background-color: #e0e0e0;
+    /*animation: horizontalBounce 0.5s;*/
+  }
+  
+  .content {
+    z-index: 99;
+    flex: 1;
+    height: 110%;
+    padding: 55px 20px 20px;
+  }
+  
+  .image {
+    display: none;
+    width: 320px;
+    height: auto;
+    margin-top: 2rem;
+    margin-bottom: -5px;
+  }
+  
+  .item#item1.initial .image,
+  .item.hovered .image {
+    display: block;
+  }
+  
+  button {
+    color: white;
+    padding: 4px 30px;
+    font-size: 18px;
+    line-height: 35px;
+    gap: 10px;
+    border: none;
+    background: linear-gradient(90deg, #0063EC 0%, #012681 100%);
+    border-radius: 100px;
+    font-family: Everett, sans-serif;
+    position: absolute;
+    bottom: 1.3rem;
+  }
+  
+  .content p,
+  .heading2 {
+    font-family: Everett, sans-serif;
+    font-weight: 500;
+    font-size: 30px;
+    margin: 15px 0 10px;
+    color: #030043;
+  }
+  
+  .cont ul {
+    margin: 1rem 0;
+    padding-left: 5px;
+    list-style-type: none;
+    /* Remove the default list style */
+  }
+  
+  .cont ul li {
+    list-style-image: url('https://uploads-ssl.webflow.com/66ac6355674df55afff1135a/66be3617b3d309575b7840e0_Vector.png');
+    margin: 0 0 9px 20px;
+    /* Adjust margin as needed */
+    line-height: 22px;
+    color: #030043;
+    font-size: 14px;
+  }
+  
+  .cont p {
+    line-height: 23px;
+    color: #030043;
+    max-width: 320px;
+    font-size: 14px;
+  }
+  
+  button a {
+    color: #fff;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .item.hovered .initial-content {
+    display: none;
+  }
+  
+  .item.hovered .hidden-content {
+    display: block;
+  }
+  
+  .hidden-content {
+    display: none;
+  }
+  
+  .initial-content {
+    display: block;
+  }
+  
+  .cont {
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+  }
+  
+  .initial-content,
+  .hidden-content {
+    height: 80%;
+  }
+  
+  @keyframes horizontalBounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+      transform: translateX(0);
+    }
+    40% {
+      transform: translateX(-5px);
+    }
+    60% {
+      transform: translateX(10px);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .cont ul {
+      display: none;
+    }
+    #item1.initial {
+      width: 100%;
+    }
+    #item1.initial .content .initial-content,
+    #item1.initial .content .image {
+      display: none;
+    }
+    #item1.initial .content .hidden-content {
+      display: block;
+    }
+    .item#item1.initial .image,
+    .item.hovered .image {
+      display: none;
+    }
+    .ccontainer {
+      flex-direction: column;
+      align-items: center;
+    }
+    .item {
+      width: 100%;
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+    .item.hovered {
+      width: 100%;
+    }
+    .image {
+      width: 85%;
+      height: auto;
+      display: none;
+      margin-left: 50px;
+      margin-top: 1.5rem;
+    }
+    .content {
+      padding: 20px 20px 5px;
+    }
+    button {
+      position: relative;
+      width: 100%;
+      margin-top: 1.4rem;
+    }
+    .initial-content button {
+      bottom: 1.5rem;
+      position: absolute;
+      width: 79%;
+    }
+    #item1 .initial-content button {
+      bottom: 1.5rem;
+      position: absolute;
+      width: 79%;
+    }
+    #item1 .hidden-content button {
+      margin-top: 4rem;
+    }
+    /* .initial-content {
+              display: none;
+          }
+          .hidden-content {
+              display: block;
+          }*/
+  }
+  
+  @media (max-width: 480px) {
+    .item {
+      padding: 10px 0 0 10px;
+      min-height: 330px;
+    }
+    h2 {
+      font-size: 18px;
+    }
+    .heading-2 span {
+      padding-right: 7px;
+    }
+  }

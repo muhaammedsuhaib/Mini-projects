@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HoverFlow</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+    <div class="ccontainer">
+        <div class="item" id="item1">
+          <div class="content">
+            <div class="hidden-content">
+              <img src="https://uploads-ssl.webflow.com/66ac6355674df55afff1135a/66b0cbe1e7741c9e30daf857_Icon.png" alt="icon" />
+              <p class="heading2">Property Owners</p>
+              <div class="cont">
+                <p>Keyper unlocks an array of services that help you manage your property with unparalleled efficiency, from financing options to portfolio monitoring and market insights.
+                </p>
+              </div>
+              <a href="/property-owner"><button>Learn more</button></a>
+            </div>
+            <div class="initial-content">
+              <img src="https://uploads-ssl.webflow.com/66ac6355674df55afff1135a/66b0cbe1e7741c9e30daf857_Icon.png" alt="icon" />
+              <p class="heading2">Property Owners</p>
+              <div class="cont">
+                <p>Keyper unlocks an array of services that help you manage your property with unparalleled efficiency, from financing options to portfolio monitoring and market insights.
+                </p>
+                <ul>
+                  <li>Cash out on your tenant’s outstanding rent any time and receive it digitally.</li>
+                  <li>Track your property's valuation & activity and that of properties like yours. </li>
+                  <li>Experience full-service property management. Buying, selling, leasing & financing. We'll handle it all.</li>
+                </ul>
+              </div>
+              <a href="/property-owner"><button>Learn more</button></a>
+            </div>
+          </div>
+          <img src="https://uploads-ssl.webflow.com/66ac6355674df55afff1135a/66c7048bbd323fa74ca1f934_Property%20Owner%20Image.png" class="image" alt="Image 1">
+        </div>
+        <div class="item" id="item2">
+          <div class="content">
+            <div class="initial-content">
+              <img src="https://uploads-ssl.webflow.com/66ac6355674df55afff1135a/66b0cbe1e7741c9e30daf857_Icon.png" alt="icon" />
+              <p class="heading2">Tenants</p>
+              <div class="cont">
+                <p>Say hello to pain free rent! With Keyper, you can pay your yearly rent in 12 installments by card. It’s what we like to call Rent Now, Pay Later or RNPL for short.</p>
+              </div>
+              <a href="https://t.realkeyper.com/tenants"><button>Learn more</button></a>
+            </div>
+            <div class="hidden-content">
+              <img src="https://uploads-ssl.webflow.com/66ac6355674df55afff1135a/66b0cbe1e7741c9e30daf857_Icon.png" alt="icon" />
+              <p class="heading2">Tenants</p>
+              <div class="cont">
+                <p>Say hello to pain free rent! With Keyper, you can pay your yearly rent in 12 installments by card. It’s what we like to call Rent Now, Pay Later or RNPL for short.</p>
+                <ul>
+                  <li>Enjoy monthly rent payments, no matter your landlord’s terms.</li>
+                  <li>Drop the cheque book and unlock bank rewards when you pay by card.</li>
+                  <li>Find the perfect home that meets your preferred payment terms on Keyper’s marketplace.</li>
+                </ul>
+              </div>
+              <a href="https://t.realkeyper.com/tenants"><button>Learn more</button></a>
+            </div>
+          </div>
+          <img src="https://uploads-ssl.webflow.com/66ac6355674df55afff1135a/66c7048ca48207cc04c4aeac_Tenants%20Image.png" class="image" alt="Image 2">
+        </div>
+        <div class="item" id="item3">
+          <div class="content">
+            <div class="initial-content">
+              <img src="https://uploads-ssl.webflow.com/66ac6355674df55afff1135a/66b0cbe1e7741c9e30daf857_Icon.png" alt="icon" />
+              <p class="heading2">Partners</p>
+              <div class="cont">
+                <p>Grow your sales with Keyper! Elevate your clients’ experience with an array of services designed to help them manage their property. The best part? You’ll earn a commission for every property you refer.</p>
+                 a href="https://keyper-website-4.webflow.io/partners"<button>Learn more</button>
+                /a
+              </div>
+            </div>
+            <div class="hidden-content">
+              <img src="https://uploads-ssl.webflow.com/66ac6355674df55afff1135a/66b0cbe1e7741c9e30daf857_Icon.png" alt="icon" />
+              <p class="heading2">Partners</p>
+              <div class="cont">
+                <p>Grow your sales with Keyper! Elevate your clients’ experience with an array of services designed to help them manage their property. The best part? You’ll earn a commission for every property you refer.</p>
+                <ul>
+                  <li>Earn a minimum of AED 2,000 for each successful referral.</li>
+                  <li>Close deals faster by offering tenants the option to pay their rent monthly.</li>
+                  <li>Your clients are always yours to keep.</li>
+                </ul>
+              </div>
+              a href="https://keyper-website-4.webflow.io/partners"<button>Learn more</button>
+              /a
+             </div>
+          </div>
+          <img src="https://uploads-ssl.webflow.com/66ac6355674df55afff1135a/66c7048be2b6c800111808fc_Partners%20Image.png" class="image" alt="Image 3">
+        </div>
+      </div>
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+  const item1 = document.getElementById("item1");
+  const items = document.querySelectorAll(".item");
+
+  item1.classList.add("initial");
+
+  items.forEach(item => {
+    if (item.id !== "item1") {
+      item.addEventListener("mouseenter", () => {
+        if (window.innerWidth > 786) { // Only apply hover effects if screen width is larger than 768px
+          items.forEach(i => i.classList.remove("hovered"));
+          item.classList.add("hovered");
+          item1.classList.remove("initial");
+          const initialContent = item1.querySelector('.initial-content');
+          const hiddenContent = item1.querySelector('.hidden-content');
+          if (initialContent) initialContent.style.display = 'none';
+          if (hiddenContent) hiddenContent.style.display = 'block';
+        }
+      });
+
+      item.addEventListener("mouseleave", () => {
+        if (window.innerWidth > 786) { // Only apply hover effects if screen width is larger than 768px
+          items.forEach(i => i.classList.remove("hovered"));
+          item1.classList.add("initial");
+          const initialContent = item1.querySelector('.initial-content');
+          const hiddenContent = item1.querySelector('.hidden-content');
+          if (initialContent) initialContent.style.display = 'block';
+          if (hiddenContent) hiddenContent.style.display = 'none';
+        }
+      });
+    }
+  });
+});
+
+
+var mobilevideo = document.getElementsByTagName("video")[0];
+mobilevideo.setAttribute("playsinline", "");
+mobilevideo.setAttribute("muted", "");
+      </script>
+</body>
+</html>
