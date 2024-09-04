@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online JavaScript Compiler</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/800px-Unofficial_JavaScript_logo_2.svg.png" type="image/x-icon">
+    <style>
+      .watermark {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: 2rem;
+        transform: translate(-50%, -50%) rotate(-30deg);
+        color: rgba(255, 255, 255, 0.056);
+        pointer-events: none;
+        user-select: none;
+        z-index: 10;
+      }
+      .relative {
+        position: relative;
+      }
+      pre {
+        overflow-y: auto;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 relative">
+    <!-- Container for Code Editor and Output -->
+    <div class="flex flex-col md:flex-row w-full h-screen">
+      <!-- Code Editor Section -->
+      <section
+        class="flex-1 bg-gray-800 p-6 md:p-12 flex items-center justify-center"
+      >
+        <div
+          class="w-full max-w-4xl bg-gray-900 border border-gray-700 rounded-lg shadow-md p-6 relative"
+        >
+          <div class="watermark">Suhaib</div>
+
+          <h1 class="text-3xl font-bold text-center text-white mb-6">
+            Online JavaScript Compiler
+          </h1>
+          <textarea
+            id="codeInput"
+            class="w-full h-96 p-4 border border-gray-600 rounded-md resize-none mb-4 font-mono text-gray-200 bg-gray-800"
+            placeholder="Write your JavaScript code here..."
+          ></textarea>
+          <button
+            onclick="runCode()"
+            class="w-full md:w-auto px-8 py-3 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition duration-300"
+          >
+            Run Code
+          </button>
+        </div>
+      </section>
+
+      <!-- Output Section -->
+      <section
+        class="flex-1 bg-gray-800 p-6 md:p-12 flex items-center justify-center"
+      >
+        <div
+          class="w-full max-w-4xl bg-gray-900 border border-gray-700 rounded-lg shadow-md p-6 relative"
+        >
+          <div class="watermark">Suhaib</div>
+
+          <h1 class="text-3xl font-bold text-center text-white mb-6">
+            Output:
+          </h1>
+          <pre
+            id="output"
+            class="w-full h-96 p-4 border border-gray-600 rounded-md bg-gray-800 text-gray-200"
+          ></pre>
+          <button
+            onclick="clearOutput()"
+            class="w-full md:w-auto px-8 py-3 bg-red-500 text-white rounded-md hover:bg-red-600 transition duration-300 mt-4"
+          >
+            Clear
+          </button>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      function runCode() {
+        const code = document.getElementById("codeInput").value;
+        const outputElement = document.getElementById("output");
+
+        outputElement.innerText = "";
+
+        const originalConsoleLog = console.log;
+        console.log = function (message) {
+          outputElement.innerText += message + "\n";
+        };
+
+        try {
+          const func = new Function(code);
+          func();
+        } catch (error) {
+          outputElement.innerText = error;
+        } finally {
+          console.log = originalConsoleLog;
+        }
+      }
+
+      function clearOutput() {
+        document.getElementById("output").innerText = "";
+      }
+    </script>
+  </body>
+</html>

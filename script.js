@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ["Create a Google Calendar Event", "HTML, CSS, JS ", './Create Google Calendar Event/index.html'],
         ["Canvas Drawing", "HTML, CSS, JS ", './canvas/index.html'],
         ["HoverFlow", "HTML, CSS, JS ", './HoverFlow/index.html'],
+        ["Online JavaScript Compiler", "HTML, CSS, JS ,Tailwind css", './Jscompiler/index.html'],
     ];
 
     const tableBody = document.querySelector('#data-table tbody');
