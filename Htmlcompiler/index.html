@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online HTML Compiler</title>
+    <link rel="shortcut icon" href="https://icons.iconarchive.com/icons/cornmanthe3rd/plex/512/Other-html-5-icon.png" type="image/x-icon">
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .watermark {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: 2rem;
+        transform: translate(-50%, -50%) rotate(-30deg);
+        color: rgba(255, 255, 255, 0.056);
+        pointer-events: none;
+        user-select: none;
+        z-index: 10;
+      }
+      .relative {
+        position: relative;
+      }
+      pre {
+        overflow-y: auto;
+        white-space: pre-wrap; /* Ensure long lines wrap properly */
+      }
+    </style>
+</head>
+<body class="bg-gray-100 relative">
+    <!-- Container for Code Editor and Output -->
+    <div class="flex flex-col md:flex-row w-full h-screen">
+        <!-- Code Editor Section -->
+        <section class="flex-1 bg-gray-800 p-6 md:p-12 flex items-center justify-center">
+            <div class="w-full max-w-4xl bg-gray-900 border border-gray-700 rounded-lg shadow-md p-6 relative">
+                <div class="watermark">Suhaib</div>
+                <h1 class="text-3xl font-bold text-center text-white mb-6">
+                    Online HTML Compiler
+                </h1>
+                <textarea
+                    id="htmlInput"
+                    class="w-full h-96 p-4 border border-gray-600 rounded-md resize-none mb-4 font-mono text-gray-200 bg-gray-800"
+                    placeholder="Write your HTML code here..."
+                ></textarea>
+                <button
+                    onclick="clearOutput()"
+                    class="w-full md:w-auto px-8 py-3 bg-red-500 text-white rounded-md hover:bg-red-600 transition duration-300"
+                >
+                   Clear
+                </button>
+            </div>
+        </section>
+
+        <!-- Output Section -->
+        <section class="flex-1 bg-gray-800 p-6 md:p-12 flex flex-col items-center justify-center">
+            <div class="w-full max-w-4xl bg-gray-900 border border-gray-700 rounded-lg shadow-md p-6 relative">
+                <div class="watermark">Suhaib</div>
+                <h1 class="text-3xl font-bold text-center text-white mb-6">
+                    Output:
+                </h1>
+                <iframe
+                    id="output"
+                    class="w-full h-96 border border-gray-600 rounded-md bg-gray-800"
+                    sandbox="allow-same-origin allow-scripts"
+                ></iframe>
+                <button
+                    onclick="updateOutput()"
+                    class="mt-4 px-8 py-3 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition duration-300"
+                >
+                    Refresh Output
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <script>
+      function updateOutput() {
+        const htmlCode = document.getElementById("htmlInput").value;
+        const outputIframe = document.getElementById("output");
+
+        outputIframe.srcdoc = htmlCode;
+      }
+
+      document.getElementById("htmlInput").addEventListener("input", updateOutput);
+
+      function clearOutput() {
+        document.getElementById("htmlInput").value = "";
+        document.getElementById("output").srcdoc = "";
+      }
+    </script>
+</body>
+</html>
