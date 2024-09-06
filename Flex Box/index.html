@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprehensive Flexbox Layout</title>
+    <style>
+        /* Global Reset for consistency */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            gap: 40px;
+        }
+
+        /* Style for Main Title */
+        h1 {
+            background-color: #28a745;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            font-size: 2.5rem;
+            border-radius: 10px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        h1:hover {
+            background-color: #1c7a3b;
+            color: #f1f1f1;
+        }
+
+        /* Flexbox container for row layout */
+        .container-row {
+            background-color: #ffdd57; /* Yellow background */
+            display: flex;
+            flex-direction: row; /* Set the direction of items in a row */
+            justify-content: space-between; /* Space out the items evenly */
+            align-items: center; /* Center the items vertically */
+            flex-wrap: wrap; /* Allow items to wrap into the next line if needed */
+            padding: 20px;
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Row box styles with flex attributes */
+        .row-box {
+            background-color: #fff;
+            width: 200px; /* Fixed width */
+            height: 200px; /* Fixed height */
+            border: 5px solid #28a745; /* Green border */
+            border-radius: 15px;
+            display: flex;
+            justify-content: center; /* Center text horizontally */
+            align-items: center; /* Center text vertically */
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            flex-basis: 200px; /* Base size for each item */
+            flex-grow: 1; /* Allow items to grow */
+            flex-shrink: 0; /* Prevent shrinking */
+        }
+
+        /* Hover effect for row boxes */
+        .row-box:hover {
+            transform: translateY(-10px); /* Lift effect */
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+        }
+
+        /* Flexbox container for column layout */
+        .container-column {
+            display: flex;
+            flex-direction: column; /* Set the direction of items in a column */
+            justify-content: flex-start; /* Align items at the top */
+            align-items: stretch; /* Stretch items to fill container width */
+            gap: 20px;
+            background-color: #007bff; /* Blue background */
+            padding: 20px;
+            width: 100%;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Column box styles with flex attributes */
+        .column-box {
+            background-color: #ffc107; /* Yellow background */
+            width: 100%; /* Full-width */
+            padding: 20px;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: 5px solid #007bff; /* Blue border */
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            align-self: flex-start; /* Align each item individually */
+        }
+
+        /* Hover effect for column boxes */
+        .column-box:hover {
+            transform: translateY(-5px); /* Slight lift on hover */
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+        }
+
+        /* Responsive design adjustments for smaller screens */
+        @media (max-width: 768px) {
+            .row-box {
+                width: 150px;
+                height: 150px;
+            }
+
+            .container-column {
+                gap: 15px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Title -->
+    <h1>Comprehensive Flexbox Layout</h1>
+
+    <!-- Flexbox Row Layout with Documentation -->
+    <h2>Flex Direction: Row</h2>
+    <p>This container uses <code>flex-direction: row</code> which arranges items in a horizontal row. Items are spaced evenly using <code>justify-content: space-between</code> and are centered vertically using <code>align-items: center</code>.</p>
+    <div class="container-row">
+        <div class="row-box" style="align-self: flex-start;">Item 1<br><small>Aligned to start</small></div>
+        <div class="row-box">Item 2</div>
+        <div class="row-box" style="align-self: flex-end;">Item 3<br><small>Aligned to end</small></div>
+        <div class="row-box">Item 4</div>
+        <div class="row-box" style="align-self: center;">Item 5<br><small>Aligned to center</small></div>
+    </div>
+
+    <!-- Flexbox Column Layout with Documentation -->
+    <h2>Flex Direction: Column</h2>
+    <p>This container uses <code>flex-direction: column</code> to arrange items vertically. Items are aligned from the top using <code>justify-content: flex-start</code>, and each item is stretched to fill the container's width using <code>align-items: stretch</code>.</p>
+    <div class="container-column">
+        <div class="column-box">Item 1</div>
+        <div class="column-box">Item 2</div>
+        <div class="column-box" style="align-self: flex-end;">Item 3<br><small>Aligned to end</small></div>
+        <div class="column-box">Item 4</div>
+        <div class="column-box">Item 5</div>
+    </div>
+</body>
+</html>
