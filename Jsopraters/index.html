@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Operators Guide</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  
+  <!-- Header Section -->
+  <header class="bg-[#416b1a] text-white text-center py-8">
+    <h1 class="text-4xl font-bold">JavaScript Operators Guide</h1>
+    <p class="mt-2 text-lg">Learn the various JavaScript operators and their functionalities.</p>
+  </header>
+
+  <!-- Main Content Section -->
+  <main class="max-w-6xl mx-auto py-12 px-6">
+    
+    <!-- Arithmetic Operators -->
+    <section>
+      <h2 class="text-2xl font-semibold text-[#416b1a] mb-4">1. Arithmetic Operators</h2>
+      <div class="overflow-x-auto">
+        <table class="min-w-full bg-white rounded-lg shadow-lg">
+          <thead class="bg-gray-200">
+            <tr>
+              <th class="py-2 px-4 text-left font-semibold">Operator</th>
+              <th class="py-2 px-4 text-left font-semibold">Description</th>
+              <th class="py-2 px-4 text-left font-semibold">Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b">
+              <td class="py-2 px-4">+</td>
+              <td class="py-2 px-4">Addition</td>
+              <td class="py-2 px-4">x + y</td>
+            </tr>
+            <tr class="border-b">
+              <td class="py-2 px-4">-</td>
+              <td class="py-2 px-4">Subtraction</td>
+              <td class="py-2 px-4">x - y</td>
+            </tr>
+            <tr class="border-b">
+              <td class="py-2 px-4">*</td>
+              <td class="py-2 px-4">Multiplication</td>
+              <td class="py-2 px-4">x * y</td>
+            </tr>
+            <tr class="border-b">
+              <td class="py-2 px-4">/</td>
+              <td class="py-2 px-4">Division</td>
+              <td class="py-2 px-4">x / y</td>
+            </tr>
+            <tr class="border-b">
+              <td class="py-2 px-4">%</td>
+              <td class="py-2 px-4">Modulus (Remainder)</td>
+              <td class="py-2 px-4">x % y</td>
+            </tr>
+            <tr class="border-b">
+              <td class="py-2 px-4">++</td>
+              <td class="py-2 px-4">Increment (adds 1)</td>
+              <td class="py-2 px-4">x++ or ++x</td>
+            </tr>
+            <tr class="border-b">
+              <td class="py-2 px-4">--</td>
+              <td class="py-2 px-4">Decrement (subtracts 1)</td>
+              <td class="py-2 px-4">x-- or --x</td>
+            </tr>
+            <tr>
+              <td class="py-2 px-4">**</td>
+              <td class="py-2 px-4">Exponentiation (power of)</td>
+              <td class="py-2 px-4">x ** y</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Assignment Operators -->
+    <section class="mt-12">
+      <h2 class="text-2xl font-semibold text-[#416b1a] mb-4">2. Assignment Operators</h2>
+      <div class="overflow-x-auto">
+        <table class="min-w-full bg-white rounded-lg shadow-lg">
+          <thead class="bg-gray-200">
+            <tr>
+              <th class="py-2 px-4 text-left font-semibold">Operator</th>
+              <th class="py-2 px-4 text-left font-semibold">Description</th>
+              <th class="py-2 px-4 text-left font-semibold">Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b">
+              <td class="py-2 px-4">=</td>
+              <td class="py-2 px-4">Assigns value</td>
+              <td class="py-2 px-4">x = 10</td>
+            </tr>
+            <tr class="border-b">
+              <td class="py-2 px-4">+=</td>
+              <td class="py-2 px-4">Adds and assigns</td>
+              <td class="py-2 px-4">x += 5</td>
+            </tr>
+            <tr class="border-b">
+              <td class="py-2 px-4">-=</td>
+              <td class="py-2 px-4">Subtracts and assigns</td>
+              <td class="py-2 px-4">x -= 5</td>
+            </tr>
+            <tr class="border-b">
+              <td class="py-2 px-4">*=</td>
+              <td class="py-2 px-4">Multiplies and assigns</td>
+              <td class="py-2 px-4">x *= 5</td>
+            </tr>
+            <tr class="border-b">
+              <td class="py-2 px-4">/=</td>
+              <td class="py-2 px-4">Divides and assigns</td>
+              <td class="py-2 px-4">x /= 5</td>
+            </tr>
+            <tr class="border-b">
+              <td class="py-2 px-4">%=</td>
+              <td class="py-2 px-4">Modulus and assigns</td>
+              <td class="py-2 px-4">x %= 5</td>
+            </tr>
+            <tr>
+              <td class="py-2 px-4">**=</td>
+              <td class="py-2 px-4">Exponentiation and assigns</td>
+              <td class="py-2 px-4">x **= 2</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Comparison Operators -->
+    <section class="mt-12">
+      <h2 class="text-2xl font-semibold text-[#416b1a] mb-4">3. Comparison Operators</h2>
+      <div class="overflow-x-auto">
+        <table class="min-w-full bg-white rounded-lg shadow-lg">
+          <thead class="bg-gray-200">
+            <tr>
+              <th class="py-2 px-4 text-left font-semibold">Operator</th>
+              <th class="py-2 px-4 text-left font-semibold">Description</th>
+              <th class="py-2 px-4 text-left font-semibold">Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b">
+              <td class="py-2 px-4">==</td>
+              <td class="py-2 px-4">Equal to</td>
+              <td class="py-2 px-4">x == y</td>
+            </tr>
+            <tr class="border-b">
+              <td class="py-2 px-4">===</td>
+              <td class="py-2 px-4">Strict equal (value and type)</td>
+              <td class="py-2 px-4">x === y</td>
+            </tr>
+            <tr class="border-b">
+              <td class="py-2 px-4">!=</td>
+              <td class="py-2 px-4">Not equal</td>
+              <td class="py-2 px-4">x != y</td>
+            </tr>
+            <tr class="border-b">
+              <td class="py-2 px-4">!==</td>
+              <td class="py-2 px-4">Strict not equal (value and type)</td>
+              <td class="py-2 px-4">x !== y</td>
+            </tr>
+            <tr class="border-b">
+              <td class="py-2 px-4">&gt;</td>
+              <td class="py-2 px-4">Greater than</td>
+              <td class="py-2 px-4">x > y</td>
+            </tr>
+            <tr class="border-b">
+              <td class="py-2 px-4">&lt;</td>
+              <td class="py-2 px-4">Less than</td>
+              <td class="py-2 px-4">x < y</td>
+            </tr>
+            <tr class="border-b">
+              <td class="py-2 px-4">&gt;=</td>
+              <td class="py-2 px-4">Greater than or equal to</td>
+              <td class="py-2 px-4">x >= y</td>
+            </tr>
+            <tr>
+              <td class="py-2 px-4">&lt;=</td>
+              <td class="py-2 px-4">Less than or equal to</td>
+              <td class="py-2 px-4">x <= y</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Logical Operators -->
+    <section class="mt-12">
+      <h2 class="text-2xl font-semibold text-[#416b1a] mb-4">4. Logical Operators</h2>
+      <div class="overflow-x-auto">
+        <table class="min-w-full bg-white rounded-lg shadow-lg">
+          <thead class="bg-gray-200">
+            <tr>
+              <th class="py-2 px-4 text-left font-semibold">Operator</th>
+              <th class="py-2 px-4 text-left font-semibold">Description</th>
+              <th class="py-2 px-4 text-left font-semibold">Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b">
+              <td class="py-2 px-4">&amp;&amp;</td>
+              <td class="py-2 px-4">Logical AND (both conditions true)</td>
+              <td class="py-2 px-4">x && y</td>
+            </tr>
+            <tr class="border-b">
+              <td class="py-2 px-4">||</td>
+              <td class="py-2 px-4">Logical OR (either condition true)</td>
+              <td class="py-2 px-4">x || y</td>
+            </tr>
+            <tr>
+              <td class="py-2 px-4">!</td>
+              <td class="py-2 px-4">Logical NOT (inverts the condition)</td>
+              <td class="py-2 px-4">!x</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Bitwise Operators -->
+    <section class="mt-12">
+      <h2 class="text-2xl font-semibold text-[#416b1a] mb-4">5. Bitwise Operators</h2>
+      <div class="overflow-x-auto">
+        <table class="min-w-full bg-white rounded-lg shadow-lg">
+          <thead class="bg-gray-200">
+            <tr>
+              <th class="py-2 px-4 text-left font-semibold">Operator</th>
+              <th class="py-2 px-4 text-left font-semibold">Description</th>
+              <th class="py-2 px-4 text-left font-semibold">Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b">
+              <td class="py-2 px-4">&amp;</td>
+              <td class="py-2 px-4">AND</td>
+              <td class="py-2 px-4">x & y</td>
+            </tr>
+            <tr class="border-b">
+              <td class="py-2 px-4">|</td>
+              <td class="py-2 px-4">OR</td>
+              <td class="py-2 px-4">x | y</td>
+            </tr>
+            <tr class="border-b">
+              <td class="py-2 px-4">^</td>
+              <td class="py-2 px-4">XOR (exclusive OR)</td>
+              <td class="py-2 px-4">x ^ y</td>
+            </tr>
+            <tr class="border-b">
+              <td class="py-2 px-4">~</td>
+              <td class="py-2 px-4">NOT (inverts all bits)</td>
+              <td class="py-2 px-4">~x</td>
+            </tr>
+            <tr class="border-b">
+              <td class="py-2 px-4">&lt;&lt;</td>
+              <td class="py-2 px-4">Left shift</td>
+              <td class="py-2 px-4">x << 2</td>
+            </tr>
+            <tr class="border-b">
+              <td class="py-2 px-4">&gt;&gt;</td>
+              <td class="py-2 px-4">Right shift</td>
+              <td class="py-2 px-4">x >> 2</td>
+            </tr>
+            <tr>
+              <td class="py-2 px-4">&gt;&gt;&gt;</td>
+              <td class="py-2 px-4">Unsigned right shift</td>
+              <td class="py-2 px-4">x >>> 2</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- String Operators -->
+    <section class="mt-12">
+      <h2 class="text-2xl font-semibold text-[#416b1a] mb-4">6. String Operators</h2>
+      <div class="overflow-x-auto">
+        <table class="min-w-full bg-white rounded-lg shadow-lg">
+          <thead class="bg-gray-200">
+            <tr>
+              <th class="py-2 px-4 text-left font-semibold">Operator</th>
+              <th class="py-2 px-4 text-left font-semibold">Description</th>
+              <th class="py-2 px-4 text-left font-semibold">Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b">
+              <td class="py-2 px-4">+</td>
+              <td class="py-2 px-4">Concatenation (joins strings)</td>
+              <td class="py-2 px-4">'Hello ' + 'World'</td>
+            </tr>
+            <tr>
+              <td class="py-2 px-4">+=</td>
+              <td class="py-2 px-4">Concatenation and assignment</td>
+              <td class="py-2 px-4">text += 'World'</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Ternary Operator -->
+    <section class="mt-12">
+      <h2 class="text-2xl font-semibold text-[#416b1a] mb-4">7. Ternary (Conditional) Operator</h2>
+      <div class="overflow-x-auto">
+        <table class="min-w-full bg-white rounded-lg shadow-lg">
+          <thead class="bg-gray-200">
+            <tr>
+              <th class="py-2 px-4 text-left font-semibold">Operator</th>
+              <th class="py-2 px-4 text-left font-semibold">Description</th>
+              <th class="py-2 px-4 text-left font-semibold">Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="py-2 px-4">?:</td>
+              <td class="py-2 px-4">Ternary operator</td>
+              <td class="py-2 px-4">condition ? value1 : value2</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Type Operators -->
+    <section class="mt-12">
+      <h2 class="text-2xl font-semibold text-[#416b1a] mb-4">8. Type Operators</h2>
+      <div class="overflow-x-auto">
+        <table class="min-w-full bg-white rounded-lg shadow-lg">
+          <thead class="bg-gray-200">
+            <tr>
+              <th class="py-2 px-4 text-left font-semibold">Operator</th>
+              <th class="py-2 px-4 text-left font-semibold">Description</th>
+              <th class="py-2 px-4 text-left font-semibold">Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b">
+              <td class="py-2 px-4">typeof</td>
+              <td class="py-2 px-4">Returns the type of a variable</td>
+              <td class="py-2 px-4">typeof x</td>
+            </tr>
+            <tr>
+              <td class="py-2 px-4">instanceof</td>
+              <td class="py-2 px-4">Checks if an object is an instance of a class or constructor</td>
+              <td class="py-2 px-4">x instanceof Array</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Comma Operator -->
+    <section class="mt-12">
+      <h2 class="text-2xl font-semibold text-[#416b1a] mb-4">9. Comma Operator</h2>
+      <div class="overflow-x-auto">
+        <table class="min-w-full bg-white rounded-lg shadow-lg">
+          <thead class="bg-gray-200">
+            <tr>
+              <th class="py-2 px-4 text-left font-semibold">Operator</th>
+              <th class="py-2 px-4 text-left font-semibold">Description</th>
+              <th class="py-2 px-4 text-left font-semibold">Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="py-2 px-4">,</td>
+              <td class="py-2 px-4">Comma separates multiple expressions</td>
+              <td class="py-2 px-4">x = (a, b)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Delete Operator -->
+    <section class="mt-12">
+      <h2 class="text-2xl font-semibold text-[#416b1a] mb-4">10. Delete Operator</h2>
+      <div class="overflow-x-auto">
+        <table class="min-w-full bg-white rounded-lg shadow-lg">
+          <thead class="bg-gray-200">
+            <tr>
+              <th class="py-2 px-4 text-left font-semibold">Operator</th>
+              <th class="py-2 px-4 text-left font-semibold">Description</th>
+              <th class="py-2 px-4 text-left font-semibold">Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="py-2 px-4">delete</td>
+              <td class="py-2 px-4">Deletes a property from an object</td>
+              <td class="py-2 px-4">delete obj.prop</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Void Operator -->
+    <section class="mt-12">
+      <h2 class="text-2xl font-semibold text-[#416b1a] mb-4">11. Void Operator</h2>
+      <div class="overflow-x-auto">
+        <table class="min-w-full bg-white rounded-lg shadow-lg">
+          <thead class="bg-gray-200">
+            <tr>
+              <th class="py-2 px-4 text-left font-semibold">Operator</th>
+              <th class="py-2 px-4 text-left font-semibold">Description</th>
+              <th class="py-2 px-4 text-left font-semibold">Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="py-2 px-4">void</td>
+              <td class="py-2 px-4">Evaluates an expression and returns undefined</td>
+              <td class="py-2 px-4">void(expression)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- In Operator -->
+    <section class="mt-12">
+      <h2 class="text-2xl font-semibold text-[#416b1a] mb-4">12. In Operator</h2>
+      <div class="overflow-x-auto">
+        <table class="min-w-full bg-white rounded-lg shadow-lg">
+          <thead class="bg-gray-200">
+            <tr>
+              <th class="py-2 px-4 text-left font-semibold">Operator</th>
+              <th class="py-2 px-4 text-left font-semibold">Description</th>
+              <th class="py-2 px-4 text-left font-semibold">Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="py-2 px-4">in</td>
+              <td class="py-2 px-4">Checks if a property exists in an object</td>
+              <td class="py-2 px-4">"prop" in obj</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Spread Operator -->
+    <section class="mt-12">
+      <h2 class="text-2xl font-semibold text-[#416b1a] mb-4">13. Spread Operator (...) </h2>
+      <div class="overflow-x-auto">
+        <table class="min-w-full bg-white rounded-lg shadow-lg">
+          <thead class="bg-gray-200">
+            <tr>
+              <th class="py-2 px-4 text-left font-semibold">Operator</th>
+              <th class="py-2 px-4 text-left font-semibold">Description</th>
+              <th class="py-2 px-4 text-left font-semibold">Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="py-2 px-4">...</td>
+              <td class="py-2 px-4">Expands elements</td>
+              <td class="py-2 px-4">let arr2 = [...arr1]</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Optional Chaining Operator -->
+    <section class="mt-12">
+      <h2 class="text-2xl font-semibold text-[#416b1a] mb-4">14. Optional Chaining Operator (?.)</h2>
+      <div class="overflow-x-auto">
+        <table class="min-w-full bg-white rounded-lg shadow-lg">
+          <thead class="bg-gray-200">
+            <tr>
+              <th class="py-2 px-4 text-left font-semibold">Operator</th>
+              <th class="py-2 px-4 text-left font-semibold">Description</th>
+              <th class="py-2 px-4 text-left font-semibold">Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="py-2 px-4">?.</td>
+              <td class="py-2 px-4">Accesses property if it exists</td>
+              <td class="py-2 px-4">obj?.prop?.subprop</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Nullish Coalescing Operator -->
+    <section class="mt-12">
+      <h2 class="text-2xl font-semibold text-[#416b1a] mb-4">15. Nullish Coalescing Operator (??)</h2>
+      <div class="overflow-x-auto">
+        <table class="min-w-full bg-white rounded-lg shadow-lg">
+          <thead class="bg-gray-200">
+            <tr>
+              <th class="py-2 px-4 text-left font-semibold">Operator</th>
+              <th class="py-2 px-4 text-left font-semibold">Description</th>
+              <th class="py-2 px-4 text-left font-semibold">Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="py-2 px-4">??</td>
+              <td class="py-2 px-4">Returns the right-hand value if the left-hand value is null or undefined</td>
+              <td class="py-2 px-4">x ?? y</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer class="mt-12 text-center text-gray-500">
+      <p>&copy; 2024 JavaScript Operators Guide</p>
+    </footer>
+  </div>
+</body>
+</html>

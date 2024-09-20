@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ["HoverFlow", "HTML, CSS, JS ", './HoverFlow/index.html'],
         ["Online JavaScript Compiler", "HTML, CSS, JS ,Tailwind css", './Jscompiler/index.html'],
         ["Online HTML Compiler", "HTML, CSS, JS ,Tailwind css", './Htmlcompiler/index.html'],
+        ["Js OPraters", "HTML,Tailwind css", './Jsopraters/index.html'],
     ];
 
     const tableBody = document.querySelector('#data-table tbody');
